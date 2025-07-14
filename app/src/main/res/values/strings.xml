@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">QuadTech</string>
+    <string name="Welcome">Welcome to QuadTech Diary!</string>
+    <string name="Login">Login</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="Login_Form">Login Form</string>
+    <string name="Email">Email</string>
+    <string name="Password">Password</string>
+    <string name="SignUp_Now">Don\'t have an account? Sign Up</string>
+    <string name="FirstName">First Name</string>
+    <string name="MiddleName">Middle Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="ConfirmPass">Confirm Password</string>
+    <string name="Cancel">Cancel</string>
+    <string name="SignUpForm">Sign Up Form</string>
+    <string name="Proceed">Proceed</string>
+    <string name="Review_Info">Review Info Form</string>
+    <string name="CJ">Christian Molina</string>
+    <string name="Luther">Luther Sambeli</string>
+    <string name="Ping">Ping-Wei Chen</string>
+    <string name="Kirk">Kirk Tan</string>
+    <string name="Developers">Meet the Developers</string>
+</resources>
