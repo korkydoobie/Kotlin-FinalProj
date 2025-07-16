@@ -9,143 +9,161 @@
     android:background="@color/background">
 
     <TextView
+        android:id="@+id/tvQuadTech2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/QuadTech"
+        android:textColor="@color/btnBackground"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tvReviewInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/Review_Info"
+        android:textColor="@color/MainText"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/patrick_hand"
         android:text="@string/FirstName"
+        android:textColor="@color/MainText"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/tvFirstNameLabel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvReviewInfo"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewInfo" />
 
     <TextView
         android:id="@+id/tvMiddleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/patrick_hand"
         android:text="@string/MiddleName"
+        android:textColor="@color/MainText"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/tvMiddleNameLabel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
 
     <TextView
         android:id="@+id/tvLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/patrick_hand"
         android:text="@string/LastName"
+        android:textColor="@color/MainText"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/tvLastNameLabel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMiddleName"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvMiddleName" />
 
     <TextView
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/patrick_hand"
         android:text="@string/Email"
+        android:textColor="@color/MainText"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/tvEmailLabel"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLastName"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
 
     <TextView
         android:id="@+id/tvFirstNameLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/SecondaryText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvFirstName"
-        app:layout_constraintTop_toTopOf="@+id/tvFirstName"
-        android:textColor="@color/SecondaryText"/>
+        app:layout_constraintTop_toTopOf="@+id/tvFirstName" />
 
     <TextView
         android:id="@+id/tvMiddleNameLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/SecondaryText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvMiddleName"
-        app:layout_constraintTop_toTopOf="@+id/tvMiddleName"
-        android:textColor="@color/SecondaryText"/>
+        app:layout_constraintTop_toTopOf="@+id/tvMiddleName" />
 
     <TextView
         android:id="@+id/tvLastNameLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/SecondaryText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvLastName"
-        app:layout_constraintTop_toTopOf="@+id/tvLastName"
-        android:textColor="@color/SecondaryText"/>
+        app:layout_constraintTop_toTopOf="@+id/tvLastName" />
 
     <Button
         android:id="@+id/btnSignUp2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/btnBackground"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/SignUp"
+        android:textColor="@color/MainText"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btnCancel2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmail"
-        android:backgroundTint="@color/btnBackground"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
     <Button
         android:id="@+id/btnCancel2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/btnBackground"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/Cancel"
+        android:textColor="@color/MainText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnSignUp2"
-        app:layout_constraintTop_toTopOf="@+id/btnSignUp2"
-        android:backgroundTint="@color/btnBackground"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toTopOf="@+id/btnSignUp2" />
 
     <TextView
         android:id="@+id/tvEmailLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:textColor="@color/SecondaryText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvEmail"
-        app:layout_constraintTop_toTopOf="@+id/tvEmail"
-        android:textColor="@color/SecondaryText"/>
+        app:layout_constraintTop_toTopOf="@+id/tvEmail" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

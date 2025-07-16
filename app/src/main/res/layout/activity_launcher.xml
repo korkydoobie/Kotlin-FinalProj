@@ -12,43 +12,43 @@
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/Welcome"
+        android:textColor="@color/MainText"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/btnBackground"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/Login"
+        android:textColor="@color/MainText"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/btnSignUp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
-        android:backgroundTint="@color/btnBackground"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/btnBackground"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/SignUp"
+        android:textColor="@color/MainText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnLogin"
-        app:layout_constraintTop_toTopOf="@+id/btnLogin"
-        android:backgroundTint="@color/btnBackground"
-        android:textColor="@color/MainText"/>
+        app:layout_constraintTop_toTopOf="@+id/btnLogin" />
 </androidx.constraintlayout.widget.ConstraintLayout>
