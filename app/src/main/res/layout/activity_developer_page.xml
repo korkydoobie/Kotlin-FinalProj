@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DeveloperPage"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/tvQuadTech2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/QuadTech"
+        android:textColor="@color/btnBackground"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDevelopers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/Developers"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/MainText"/>
+
+    <TextView
+        android:id="@+id/tvKirk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="70dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/Kirk"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvLuther"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgKirk"
+        android:textColor="@color/MainText"/>
+
+    <TextView
+        android:id="@+id/tvLuther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/Luther"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvKirk"
+        app:layout_constraintTop_toBottomOf="@+id/imgLuther"
+        android:textColor="@color/MainText" />
+
+    <TextView
+        android:id="@+id/tvPing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/Ping"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCj"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgPing"
+        android:textColor="@color/MainText"/>
+
+    <TextView
+        android:id="@+id/tvCj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/CJ"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPing"
+        app:layout_constraintTop_toBottomOf="@+id/imgCj"
+        android:textColor="@color/MainText"/>
+
+    <ImageView
+        android:id="@+id/imgKirk"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgLuther"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDevelopers"
+        app:srcCompat="@drawable/ako" />
+
+    <ImageView
+        android:id="@+id/imgLuther"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgKirk"
+        app:layout_constraintTop_toBottomOf="@+id/tvDevelopers"
+        app:srcCompat="@drawable/luther" />
+
+    <ImageView
+        android:id="@+id/imgPing"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/imgCj"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvKirk"
+        app:srcCompat="@drawable/ping" />
+
+    <ImageView
+        android:id="@+id/imgCj"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgPing"
+        app:layout_constraintTop_toBottomOf="@+id/tvLuther"
+        app:srcCompat="@drawable/cj" />
+
+    <Button
+        android:id="@+id/btnBack2"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/btnBackground"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/Back"
+        android:textColor="@color/MainText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
