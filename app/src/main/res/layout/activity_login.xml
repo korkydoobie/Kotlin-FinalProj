@@ -67,7 +67,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin2"
-        android:textColor="@color/MainText"/>
+        android:textColor="@color/MainText"
+        android:clickable="true"
+        android:focusable="true"/>
 
     <EditText
         android:id="@+id/etPassword"

@@ -6,7 +6,7 @@
     <string name="Login_Form">Login Form</string>
     <string name="Email">Email</string>
     <string name="Password">Password</string>
-    <string name="SignUp_Now">Don\'t have an account? Sign Up</string>
+    <string name="SignUp_Now">Don\'t have an account? <b><font color="#F7C8E0">Sign up</font></b></string>
     <string name="FirstName">First Name</string>
     <string name="MiddleName">Middle Name</string>
     <string name="LastName">Last Name</string>
