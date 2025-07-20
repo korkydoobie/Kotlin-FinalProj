@@ -10,7 +10,7 @@ import com.example.quadtech.databinding.ActivityLoginBinding
 
 class Login : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-
+    val username: String = "sampler"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,7 +23,8 @@ class Login : AppCompatActivity() {
         }
 
         binding.btnLogin2.setOnClickListener {
-            val intent = Intent(this, HomeScreen::class.java)
+            val intent = Intent(this, Homepage::class.java)
+            intent.putExtra("username", username)
             startActivity(intent)
         }
 
