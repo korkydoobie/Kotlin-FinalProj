@@ -11,4 +11,5 @@
     <color name="MainText">#4A4A4A</color>
     <color name="SecondaryText">#888888</color>
     <color name="btnBackground">#F7C8E0</color>
+    <color name="creambg">#FFFFF3</color>
 </resources>
