@@ -17,8 +17,8 @@ class Homepage : Activity() {
     lateinit var listView: ListView
     lateinit var addButton: Button
 
-    // Hardcoded username
-    lateinit var username: String // ✅ fix: use lateinit var instead of val
+
+    lateinit var username: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
