@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
@@ -22,6 +24,7 @@ class Homepage : AppCompatActivity() {
     private val diaryIds = mutableListOf<Long>() // Store diary IDs for deletion
     private lateinit var binding: ActivityHomepageBinding
     lateinit var username: String
+    private var selectedPosition = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +34,8 @@ class Homepage : AppCompatActivity() {
         // Initialize views from binding
         listView = binding.listView.apply {
             choiceMode = ListView.CHOICE_MODE_SINGLE
-            setSelector(R.drawable.list_item_selector) }
+            setSelector(R.drawable.list_item_selector)
+        }
         addButton = binding.buttonAdd
         username = intent.getStringExtra("username") ?: "defaultUser"
         Log.d("HOMEPAGE", "Entered Homepage. Username: $username")
@@ -40,7 +44,6 @@ class Homepage : AppCompatActivity() {
             override fun onCreate(db: SQLiteDatabase) {
                 db.execSQL("CREATE TABLE IF NOT EXISTS diaries (id INTEGER PRIMARY KEY, title TEXT, content TEXT, username TEXT)")
             }
-
             override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
         }
 
@@ -49,43 +52,29 @@ class Homepage : AppCompatActivity() {
 
         loadDiaryList()
 
+        binding.listView.setOnItemClickListener { _, _, position, _ ->
+            viewFullContent(position)
+            binding.listView.clearChoices() // Clear any lingering selection
+        }
+
+        binding.listView.setOnItemLongClickListener { _, view, position, _ ->
+            selectedPosition = position
+            view.isPressed = true // Temporary press state
+            view.postDelayed({ view.isPressed = false }, 200)
+            true
+        }
+
         binding.buttonAdd.setOnClickListener {
             val intent = Intent(this, AddDiaryActivity::class.java)
             intent.putExtra("username", username)
             startActivity(intent)
         }
 
-        // Add item click listener to handle selection
-        listView.setOnItemClickListener { _, _, position, _ ->
-            // This will highlight the selected item
-            listView.setItemChecked(position, true)
-        }
-
         binding.buttonDelete.setOnClickListener {
-            val selectedPosition = listView.checkedItemPosition
-            if (selectedPosition != ListView.INVALID_POSITION && selectedPosition < diaryIds.size) {
-                // Show confirmation dialog
-                AlertDialog.Builder(this)
-                    .setTitle("Delete Entry")
-                    .setMessage("Are you sure you want to delete this entry?")
-                    .setPositiveButton("Delete") { _, _ ->
-                        // Get the ID of the selected item
-                        val idToDelete = diaryIds[selectedPosition]
-
-                        // Delete from database
-                        val rowsDeleted = db.delete("diaries", "id=?", arrayOf(idToDelete.toString()))
-
-                        if (rowsDeleted > 0) {
-                            loadDiaryList() // Refresh the list
-                            Toast.makeText(this, "Entry deleted", Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(this, "Failed to delete entry", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                    .setNegativeButton("Cancel", null)
-                    .show()
+            if (selectedPosition != -1) {
+                showDeleteConfirmation(selectedPosition)
             } else {
-                Toast.makeText(this, "Please select an entry first", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Long-press an entry to select it", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -101,24 +90,63 @@ class Homepage : AppCompatActivity() {
         loadDiaryList()
     }
 
-    private fun loadDiaryList() {
-        diaryIds.clear() // Clear previous IDs
-        val cursor = db.rawQuery("SELECT id, title, content FROM diaries WHERE username = ? ORDER BY id DESC",
-            arrayOf(username))
 
+    private fun loadDiaryList() {
+        diaryIds.clear()
+        val cursor = db.rawQuery("SELECT id, title FROM diaries WHERE username = ?", arrayOf(username))
         val items = mutableListOf<String>()
+
         while (cursor.moveToNext()) {
             diaryIds.add(cursor.getLong(0))
-            val title = cursor.getString(1)
-            val content = cursor.getString(2)
-            items.add("📔 $title\n$content")
+            items.add(cursor.getString(1))
         }
         cursor.close()
 
-        listView.adapter = ArrayAdapter(this,
-            android.R.layout.simple_list_item_activated_1,
-            items)
-        listView.clearChoices()
+        // Use regular list item layout (not activated one)
+        binding.listView.adapter = ArrayAdapter(this,
+            android.R.layout.simple_list_item_1,
+            items
+        )
+        binding.listView.clearChoices()
+    }
+
+    private fun viewFullContent(position: Int) {
+        if (position < diaryIds.size) {
+            val cursor = db.rawQuery("SELECT title, content FROM diaries WHERE id = ?",
+                arrayOf(diaryIds[position].toString()))
+
+            if (cursor.moveToFirst()) {
+                AlertDialog.Builder(this)
+                    .setTitle(cursor.getString(0))
+                    .setMessage(cursor.getString(1))
+                    .setPositiveButton("OK", null)
+                    .show()
+            }
+            cursor.close()
+        }
+    }
+
+    private fun showDeleteConfirmation(position: Int) {
+        AlertDialog.Builder(this)
+            .setTitle("Delete Entry")
+            .setMessage("Are you sure you want to delete this entry?")
+            .setPositiveButton("Delete") { _, _ ->
+                deleteEntry(position)
+            }
+            .setNegativeButton("Cancel") { _, _ ->
+                selectedPosition = -1
+                binding.listView.clearChoices()
+            }
+            .show()
+    }
+
+    private fun deleteEntry(position: Int) {
+        if (position < diaryIds.size) {
+            db.delete("diaries", "id=?", arrayOf(diaryIds[position].toString()))
+            loadDiaryList()
+            selectedPosition = -1
+            Toast.makeText(this, "Entry deleted", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroy() {
