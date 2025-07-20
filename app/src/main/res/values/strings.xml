@@ -21,4 +21,9 @@
     <string name="Kirk">Kirk Tan</string>
     <string name="Developers">Meet the Developers</string>
     <string name="QuadTech">QuadTech</string>
+    <string name="SmallAdd">+ Add</string>
+    <string name="BigAdd">Add Diary Entry</string>
+    <string name="Back">Back</string>
+    <string name="Developers2">Developers Page</string>
+    <string name="Logout">Logout</string>
 </resources>

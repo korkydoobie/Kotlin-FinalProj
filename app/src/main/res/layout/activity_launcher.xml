@@ -51,4 +51,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnLogin"
         app:layout_constraintTop_toTopOf="@+id/btnLogin" />
+
+    <Button
+        android:id="@+id/btnDeveloperPage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/btnBackground"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/Developers2"
+        android:textColor="@color/MainText"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

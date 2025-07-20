@@ -31,5 +31,10 @@ class Launcher : AppCompatActivity() {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
         }
+
+        binding.btnDeveloperPage.setOnClickListener {
+            val intent = Intent(this, DeveloperPage::class.java)
+            startActivity(intent)
+        }
     }
 }
