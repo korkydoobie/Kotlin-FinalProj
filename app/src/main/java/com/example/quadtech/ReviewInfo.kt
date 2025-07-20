@@ -49,7 +49,7 @@ class ReviewInfo : AppCompatActivity() {
 
             if (success) {
                 Log.d("DEBUG", "Navigating to Homepage with username: $firstName")
-                val intent = Intent(this, Homepage::class.java)
+                val intent = Intent(this, Login::class.java)
                 intent.putExtra("username", firstName)
                 startActivity(intent)
                 finish()

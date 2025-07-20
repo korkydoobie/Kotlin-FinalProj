@@ -2,6 +2,7 @@ package com.example.quadtech
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,10 +24,22 @@ class Login : AppCompatActivity() {
         }
 
         binding.btnLogin2.setOnClickListener {
-            val intent = Intent(this, Homepage::class.java)
-            intent.putExtra("username", username)
-            startActivity(intent)
+            val email = binding.etEmail.text.toString()
+            val password = binding.etPassword.text.toString()
+
+            val dbHelper = UserDBHelper(this)
+
+            if (dbHelper.checkUser(email, password)) {
+                Toast.makeText(this, "Succes gago ka.", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, Homepage::class.java)
+                intent.putExtra("username", email)
+                startActivity(intent)
+                finish()
+            } else {
+                Toast.makeText(this, "No user!", Toast.LENGTH_SHORT).show()
+            }
         }
+
 
         binding.btnBack3.setOnClickListener {
             val intent = Intent(this, Launcher::class.java)

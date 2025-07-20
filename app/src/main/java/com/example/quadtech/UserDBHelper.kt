@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 
-class UserDBHelper(context: Context) : SQLiteOpenHelper(context, "users.db", null, 1) {
+class UserDBHelper(context: Context) : SQLiteOpenHelper(context, "users.db", null, 2) {
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(
@@ -39,4 +39,16 @@ class UserDBHelper(context: Context) : SQLiteOpenHelper(context, "users.db", nul
         Log.d("DEBUG", "Inserted user: $firstName, result: $result")
         return result != -1L
     }
+
+    fun checkUser(email: String, password: String): Boolean {
+        val db = readableDatabase
+        val cursor = db.rawQuery(
+            "SELECT * FROM users WHERE email = ? AND password = ?",
+            arrayOf(email, password)
+        )
+        val exists = cursor.count > 0
+        cursor.close()
+        return exists
+    }
+
 }
