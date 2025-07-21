@@ -21,7 +21,7 @@ class Homepage : AppCompatActivity() {
     lateinit var db: SQLiteDatabase
     lateinit var listView: ListView
     lateinit var addButton: Button
-    private val diaryIds = mutableListOf<Long>() // Store diary IDs for deletion
+    private val diaryIds = mutableListOf<Long>()
     private lateinit var binding: ActivityHomepageBinding
     lateinit var username: String
     private var selectedPosition = -1
@@ -31,7 +31,6 @@ class Homepage : AppCompatActivity() {
         binding = ActivityHomepageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize views from binding
         listView = binding.listView.apply {
             choiceMode = ListView.CHOICE_MODE_SINGLE
             setSelector(R.drawable.list_item_selector)
@@ -47,19 +46,19 @@ class Homepage : AppCompatActivity() {
             override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
         }
 
-        db = dbHelper.writableDatabase // Changed to writableDatabase
-        listView.choiceMode = ListView.CHOICE_MODE_SINGLE // Enable single selection
+        db = dbHelper.writableDatabase
+        listView.choiceMode = ListView.CHOICE_MODE_SINGLE
 
         loadDiaryList()
 
         binding.listView.setOnItemClickListener { _, _, position, _ ->
             viewFullContent(position)
-            binding.listView.clearChoices() // Clear any lingering selection
+            binding.listView.clearChoices()
         }
 
         binding.listView.setOnItemLongClickListener { _, view, position, _ ->
             selectedPosition = position
-            view.isPressed = true // Temporary press state
+            view.isPressed = true
             view.postDelayed({ view.isPressed = false }, 200)
             true
         }
@@ -102,7 +101,6 @@ class Homepage : AppCompatActivity() {
         }
         cursor.close()
 
-        // Use regular list item layout (not activated one)
         binding.listView.adapter = ArrayAdapter(this,
             android.R.layout.simple_list_item_1,
             items

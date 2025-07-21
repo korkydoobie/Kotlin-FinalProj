@@ -3,26 +3,34 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/creambg">
 
     <EditText
         android:id="@+id/etTitle"
-        android:hint="Title"
+        android:hint="@string/Diary_Title"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/etContent"
-        android:hint="Content"
+        android:hint="@string/Dear_Diary"
         android:layout_width="match_parent"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:textSize="20sp"
         android:layout_height="150dp"
         android:gravity="top"
         android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/btnSave"
-        android:text="Save Diary"
+        android:text="@string/Save_Diary"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/btnBackground"
         android:layout_marginTop="16dp" />
 </LinearLayout>

@@ -26,4 +26,10 @@
     <string name="Back">Back</string>
     <string name="Developers2">Developers Page</string>
     <string name="Logout">Logout</string>
+    <string name="personal_diary">My Personal Diary</string>
+    <string name="Delete">Delete</string>
+    <string name="addDiary">Add Diary</string>
+    <string name="Dear_Diary">Dear Diary...</string>
+    <string name="Diary_Title">Diary Title</string>
+    <string name="Save_Diary">Save Diary</string>
 </resources>

@@ -2,47 +2,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFF3"
+    android:background="@color/creambg"
     android:padding="8dp">
-
-
-
-    <!-- Header -->
+    
     <TextView
         android:id="@+id/titleText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Personal Diary"
+        android:text="@string/personal_diary"
+        android:fontFamily="@font/patrick_hand_sc"
         android:textColor="#4A4A4A"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
         android:padding="16dp"/>
 
-    <!-- Diary Entries List -->
     <ListView
         android:id="@+id/listView"
         android:layout_below="@id/titleText"
         android:layout_above="@+id/buttonContainer"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:textSize="20sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="#888888"
         android:dividerHeight="1dp"
         android:padding="8dp"/>
 
-    <!-- Logout Button -->
     <Button
         android:id="@+id/buttonLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Logout"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:textSize="20sp"
+        android:text="@string/Logout"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#03DAC5"
+        android:backgroundTint="#6200EE"
         android:layout_margin="8dp"
         android:textAllCaps="false"/>
-
-    <!-- Button Container -->
+    
     <LinearLayout
         android:id="@+id/buttonContainer"
         android:layout_width="match_parent"
@@ -54,27 +53,29 @@
         android:elevation="8dp"
         android:layout_marginBottom="8dp">
 
-        <!-- Delete Button -->
         <Button
             android:id="@+id/buttonDelete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Delete"
+            android:text="@string/Delete"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#F7C8E0"
+            android:backgroundTint="@color/btnBackground"
             android:layout_margin="4dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/patrick_hand_sc"
             android:textAllCaps="false"/>
-
-        <!-- Add Button -->
+        
         <Button
             android:id="@+id/buttonAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add Diary"
+            android:text="@string/addDiary"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#6200EE"
+            android:fontFamily="@font/patrick_hand_sc"
+            android:textSize="20sp"
+            android:backgroundTint="@color/btnBackground"
             android:layout_margin="4dp"
             android:textAllCaps="false"/>
     </LinearLayout>
